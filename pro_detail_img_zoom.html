@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>商品详情页的商品图片--鼠标移入图片时，右边出现鼠标移入商品部位的大图</title>
+	<style>
+	 *{
+	 	margin: 0;
+	 	padding: 0;
+	 }
+	.jqzoom{
+	    border:1px solid #BBB;
+	    float:left;
+	    position:relative;
+	    padding:0;
+	    cursor:pointer;
+	}
+	div.zoomdiv {
+	    z-index:999;
+	    position: absolute;
+	    top:0;
+	    left:0;
+	    width: 200px;
+	    height: 200px;
+	    background: #ffffff;
+	    border:1px solid #CCCCCC;
+	    display:none;
+	    text-align: center;
+	    overflow: hidden;
+	}
+	div.jqZoomPup {
+	    z-index: 999;
+	    visibility: hidden;
+	    position: absolute;
+	    top:0;
+	    left:0;
+	    width: 50px;
+	    height: 50px;
+	    border: 1px solid #aaa;
+	    background: #ccc;
+	    opacity: .5;
+	    -moz-opacity: .5;
+	    -khtml-opacity: .5;
+	    filter: alpha(Opacity=50);
+	}
+	</style>
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="js/jquery.jqzoom.js"></script>
+</head>
+<body>
+	<div class="jqzoom">
+    <img src="img/pimg.png" style="width:256px; height:144px;" alt="" jqimg="img/pimg.png" id="bigImg"/>
+</div>
+
+</body>
+<script>
+  $(function() {
+    $(".jqzoom").jqueryzoom({
+    	//这5个属性可以加上修改值，也可以不加，取默认值就可以了。
+        // xzoom: 500, //放大图的宽度(默认是 400)
+        // yzoom: 500, //放大图的高度(默认是 400)
+        // offset: 10, //离原图的距离(默认是 10)
+        // position: "right", //放大图的定位(默认是 "right")
+        // preload: 1
+    });
+	});
+
+
+</script>
+</html>
